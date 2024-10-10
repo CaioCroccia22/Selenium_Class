@@ -1,8 +1,17 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
-# utilizando o WebDriver
-browser = webdriver.Firefox()
-print(browser)
+# 1 - utilizando o WebDriver
+browser = webdriver.Chrome()
 
+#2 - Acessando a página
 browser.get('https://www.amazon.com.br')
-browser.quit()
+
+
+#3 - Acessando elemento em uma página
+elem = browser.find_element(By.ID, 'twotabsearchtextbox')
+elem.send_keys('ps5')
+elem.send_keys(Keys.ENTER)
+
+# browser.quit()
